@@ -1,0 +1,15 @@
+.navbar {
+    background-color: rgb(31, 29, 29);
+    height: 60px;
+    width: 100%;
+}
+
+.navbar__logo {
+    color: #fff;
+}
+
+.navbar__searchBar {
+    display: flex;
+    justify-content: right;
+
+}

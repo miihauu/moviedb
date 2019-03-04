@@ -1,0 +1,44 @@
+.movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(0, 0, 0)), url('https://www.indiewire.com/wp-content/uploads/2014/10/interstellar-poster.jpg?w=780');
+    font-size: 14px;
+}
+
+.movie-container p {
+    color: #fff;
+}
+
+.movie-container h2 {
+    color: #fff;
+}
+
+.movie-container h4 {
+    color: rgb(27, 179, 7);
+}
+
+.movie-container span {
+    color: rgb(255, 255, 255);
+}
+
+.movie-element {
+    display: flex;
+    z-index: 2;
+}
+
+.movie-element img {
+    height: auto;
+    width: 400px;
+}
+
+.movie-element__content {
+    height: auto;
+    width: 400px;
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.705);
+    padding: 10px 15px 10px 15px;
+}
