@@ -1,6 +1,8 @@
 .navbar {
-    background-color: rgb(31, 29, 29);
-    height: 60px;
+    display:flex;
+    justify-content: space-between;
+    background: transparent;
+    height: 50px;
     width: 100%;
 }
 
@@ -8,8 +10,3 @@
     color: #fff;
 }
 
-.navbar__searchBar {
-    display: flex;
-    justify-content: right;
-
-}

@@ -1,4 +1,4 @@
-.movie-container {
+.movie__container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,32 +9,32 @@
     font-size: 17px;
 }
 
-.movie-container p {
+.movie__container p {
     color: #fff;
 }
 
-.movie-container h2 {
+.movie__container h2 {
     color: #fff;
 }
 
-.movie-container h4 {
+.movie__container h4 {
     color: #ffde03;
 }
 
-.movie-container span {
+.movie__container span {
     color: rgb(255, 255, 255);
 }
 
-.movie-element {
+.movie__element {
     display: flex;
 }
 
-.movie-element img{
+.movie__element img{
     height: auto;
     width: 500px;
 }
 
-.movie-element__content {
+.movie__element__content {
     height: auto;
     width: 500px;
     border: 1px solid rgb(0, 0, 0);
@@ -47,7 +47,7 @@
     flex-direction: column;
 }
 
-.movie__info-properties {
+.movie__info__properties {
     display: flex;
     justify-content: space-evenly;
 }
@@ -64,95 +64,3 @@
 
 
 
-@media (max-width: 60rem) {
-    .movie-container {
-        font-size: 0.7rem;
-    }
-
-    .movie-container h2 {
-        font-size: 1rem;
-    }
-    
-    .movie-container h4 {
-        font-size: 1rem;
-    }
-
-    .movie-element img {
-        height: auto;
-        width: 17rem;
-    }
-    .movie-element__content {
-        height: auto;
-        width: 17rem;
-        border: 1px solid #000;
-        background-color: rgba(0, 0, 0, 0.705);
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-}
-
-@media (max-width: 40rem) {
-    .movie-container {
-        font-size: 3rem;
-    }
-
-    .movie-container h2 {
-        font-size: 1rem;
-    }
-    
-    .movie-container h4 {
-        font-size: 1rem;
-    }
-
-    .movie-element {
-        display:flex;
-        flex-direction: column;
-    }
-    .movie-element img {
-        height: auto;
-        width: 13rem;
-    }
-    .movie-element__content {
-        height: auto;
-        width: 13rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-}
-
-@media (max-width: 23rem) {
-    .movie-container {
-        font-size: 0.75rem;
-    }
-    .movie-element {
-        display:flex;
-        flex-direction: column;
-    }
-    .movie-element img {
-        display: none;
-    }
-    .movie-element__content {
-        height: auto;
-        width: 15rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-}
-
-@media only screen 
-and (min-device-width : 375px) 
-and (max-device-width : 667px) 
-{ 
-    .movie-container {
-        font-size: 0.75rem;
-    }
-    .movie-element {
-        display:flex;
-        flex-direction: column;
-    }
-    .movie-element img {
-        display: none
-    }
-    .movie-element__content {
-        height: auto;
-        width: 15rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-}

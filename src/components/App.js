@@ -3,7 +3,6 @@ import Header from './Header';
 import Movie from './Movie';
 import { BrowserRouter, Route} from 'react-router-dom'
 
-import '../css/App.css';
 
 class App extends React.Component {
 
