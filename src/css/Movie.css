@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgb(0, 0, 0)), url('https://www.indiewire.com/wp-content/uploads/2014/10/interstellar-poster.jpg?w=780');
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .movie-container p {
@@ -18,7 +18,7 @@
 }
 
 .movie-container h4 {
-    color: rgb(27, 179, 7);
+    color: #ffde03;
 }
 
 .movie-container span {
@@ -27,18 +27,132 @@
 
 .movie-element {
     display: flex;
-    z-index: 2;
 }
 
-.movie-element img {
+.movie-element img{
     height: auto;
-    width: 400px;
+    width: 500px;
 }
 
 .movie-element__content {
     height: auto;
-    width: 400px;
-    border: 1px solid #000;
+    width: 500px;
+    border: 1px solid rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.705);
     padding: 10px 15px 10px 15px;
+}
+
+.movie__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie__info-properties {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.movie__loader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+
+}
+
+
+
+
+@media (max-width: 60rem) {
+    .movie-container {
+        font-size: 0.7rem;
+    }
+
+    .movie-container h2 {
+        font-size: 1rem;
+    }
+    
+    .movie-container h4 {
+        font-size: 1rem;
+    }
+
+    .movie-element img {
+        height: auto;
+        width: 17rem;
+    }
+    .movie-element__content {
+        height: auto;
+        width: 17rem;
+        border: 1px solid #000;
+        background-color: rgba(0, 0, 0, 0.705);
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .movie-container {
+        font-size: 3rem;
+    }
+
+    .movie-container h2 {
+        font-size: 1rem;
+    }
+    
+    .movie-container h4 {
+        font-size: 1rem;
+    }
+
+    .movie-element {
+        display:flex;
+        flex-direction: column;
+    }
+    .movie-element img {
+        height: auto;
+        width: 13rem;
+    }
+    .movie-element__content {
+        height: auto;
+        width: 13rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 23rem) {
+    .movie-container {
+        font-size: 0.75rem;
+    }
+    .movie-element {
+        display:flex;
+        flex-direction: column;
+    }
+    .movie-element img {
+        display: none;
+    }
+    .movie-element__content {
+        height: auto;
+        width: 15rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+{ 
+    .movie-container {
+        font-size: 0.75rem;
+    }
+    .movie-element {
+        display:flex;
+        flex-direction: column;
+    }
+    .movie-element img {
+        display: none
+    }
+    .movie-element__content {
+        height: auto;
+        width: 15rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
 }

@@ -1,61 +1,67 @@
 import React from 'react';
 import '../css/Movie.css';
+import { config } from '../config';
+import axios from 'axios';
+import MovieDetails from './MovieDetails';
+import Loader from 'react-loader-spinner'
 
 
 class Movie extends React.Component {
     state = {
-        title: 'Interstellar',
-        description: 'Interstellar chronicles the adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.',
-        genre: 'Adventure, Drama, Science Fiction',
-        release: '07/2014',
-        runningTime: '120 min',
-        boxOffice: '100 mln $',
-        voteAvg: '7.8/10'
+        movieId: this.props.match.params.id,
+        details: {},
+        isLoaded: false
     }
 
+    
+    componentDidMount() {
+        this.getDetails(this.state.movieId)
 
+    }
+    
+    getDetails = async movieId => {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+            params: {
+                api_key: config.apiKey,
+                language: 'en-US',
+                
+                
+            }
+        });
+
+        this.setState({
+            details: response.data,
+            isLoaded: true
+        })
+    } 
+
+    renderMovie() {
+        if (this.state.isLoaded) {
+            return <MovieDetails details={this.state.details} />
+        } else {
+            return (
+                <div className="movie__loader">
+                    <div>
+                        <Loader 
+                        type="Puff" 
+                        color="rgb(38, 90, 235)" 
+                        height={80} 
+                        width={80} />
+                    </div>
+                    <p>Loading</p>
+                </div>
+            )
+        }
+    }
+
+    
+    
 
     render() {
-        const { title, description, genre, release, runningTime, boxOffice, voteAvg } = this.state;
-
+        
         return ( 
-            <div className="movie-container">
-    
-                <div className="movie-element">
-                        <div>
-                            <img src="https://image.tmdb.org/t/p/w500/nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg"/>
-                        </div>
-                        <div className="movie-element__content">
-                            <div className="movie__title"> 
-                                <h2 >{title.toUpperCase()}</h2>  
-                            </div>
-                            <div className="movie__description">
-                                <h4>DESCRIPTION:</h4>
-                                <p>{description}</p> 
-                            </div>
-                            <div className="movie__genre">
-                                <h4>GENRE:</h4>
-                                <p>{genre}</p>
-                            </div>
-                            <div className="movie__info">
-                                <h4>INFO:</h4>
-                                <div><p>Release Time:</p><p>{release}</p></div>
-                                <div><p>Running Time:</p><p>{runningTime}</p></div>
-                            </div>
-                            <div className="movie__boxOfficeAvg">
-                                <div>
-                                    <h4>BOX OFFICE:</h4>
-                                    <p>{boxOffice}</p>
-                                </div>
-                                <div>
-                                    <h4>VOTE AVERAGE:</h4>
-                                    <p>{voteAvg}</p>
-                                </div>
-                            </div>
-
-                        </div>
-                </div>
-    
+            <div>
+                {this.renderMovie()}
             </div>
          );
 

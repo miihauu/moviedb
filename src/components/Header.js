@@ -3,21 +3,11 @@ import SearchBar from './SearchBar';
 import Navbar from './Navbar';
 
 class Header extends React.Component {
-    state = { 
-        videos: {},
-        inputSearch: ''
-     }
-     
+  
 
-
-    /*    renderList = () => {
-            return this.state.videos.map((item) => item.title)
-        } */
-    
 
 
     render() { 
-        console.log(this.state.videosTitles)
         return ( 
             <div className="main-container">
                 <Navbar/>
@@ -26,7 +16,7 @@ class Header extends React.Component {
                         <h1>Find your movie!</h1> 
                     </div>
                     <div>
-                        <SearchBar videos={this.state.videosTitles} getResult={this.getResult}/>      
+                        <SearchBar />      
                     </div>
                 </div>
             </div>

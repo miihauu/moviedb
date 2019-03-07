@@ -57,7 +57,13 @@ body {
 
 .autocomplete {
     display: flex;
+    justify-content: space-between;
     padding: 10px;
     width: 300px;
     color: #000;
+}
+
+.autocomplete img {
+    width: 20px;
+    height: auto
 }
